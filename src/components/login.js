@@ -29,6 +29,8 @@ export const Login = () => {
         localStorage.setItem('refresh_token', data.refresh);
         axios.defaults.headers.common['Authorization'] =
             `Bearer ${data['access']}`;
+        console.log("auth: ")
+        console.log(axios.defaults.headers.common['Authorization']);
         window.location.href = '/'
     }
     return (
