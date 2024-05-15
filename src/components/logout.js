@@ -14,6 +14,7 @@ export const Logout = () => {
                 window.location.href = '/login'
             } catch (e) {
                 console.log('logout not working', e)
+                window.location.href = '/login'
             }
         })();
     }, []);
