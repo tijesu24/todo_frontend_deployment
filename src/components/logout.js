@@ -9,6 +9,7 @@ export const Logout = () => {
                         refresh_token: localStorage.getItem('refresh_token')
                     }, { headers: { 'Content-Type': 'application/json' } },
                         { withCredentials: true });
+                console.log(axios.defaults.headers.common['Authorization'])
                 localStorage.clear();
                 axios.defaults.headers.common['Authorization'] = null;
                 window.location.href = '/login'
