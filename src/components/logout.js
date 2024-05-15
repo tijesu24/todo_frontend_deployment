@@ -4,12 +4,13 @@ export const Logout = () => {
     useEffect(() => {
         (async () => {
             try {
+                console.log(axios.defaults.headers.common['Authorization'])
+
                 const { data } = await
                     axios.post('https://todo-backend-new-u6m3.onrender.com/logout/', {
                         refresh_token: localStorage.getItem('refresh_token')
                     }, { headers: { 'Content-Type': 'application/json' } },
                         { withCredentials: true });
-                console.log(axios.defaults.headers.common['Authorization'])
                 localStorage.clear();
                 axios.defaults.headers.common['Authorization'] = null;
                 window.location.href = '/login'
