@@ -4,8 +4,8 @@ export const Logout = () => {
     useEffect(() => {
         (async () => {
             try {
-                console.log("auth: ")
-                console.log(axios.defaults.headers.common['Authorization']);
+                axios.defaults.headers.common['Authorization'] =
+                    `Bearer ${localStorage.getItem('access_token')}`;
 
                 const { data } = await
                     axios.post('https://todo-backend-new-u6m3.onrender.com/logout/', {

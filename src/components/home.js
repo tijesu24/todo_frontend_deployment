@@ -6,8 +6,7 @@ import Todos from "./todos";
 export const Home = () => {
     const [message, setMessage] = useState('');
     useEffect(() => {
-        console.log("auth: ")
-        console.log(axios.defaults.headers.common['Authorization']);
+
         if (localStorage.getItem('access_token') === null) {
             window.location.href = '/login'
         }
